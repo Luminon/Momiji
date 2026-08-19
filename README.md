@@ -1,7 +1,7 @@
 # Momiji
 
 [![CI](https://github.com/Luminon/macoscursor/actions/workflows/ci.yml/badge.svg)](https://github.com/Luminon/macoscursor/actions/workflows/ci.yml)
-[![Latest Release](https://img.shields.io/github/v/release/Luminon/macoscursor?display_name=tag)](https://github.com/Luminon/macoscursor/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/Luminon/macoscursor?include_prereleases&sort=semver&display_name=tag)](https://github.com/Luminon/macoscursor/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Windows 커서 테마를 macOS에서 사용할 수 있게 변환하고 편집·적용하는 네이티브 SwiftUI 앱입니다. `.ani`, `.cur`, 선택적 `.inf`가 들어 있는 폴더를 가져오면 Windows 역할을 macOS 커서 역할로 자동 매핑합니다.
@@ -20,7 +20,7 @@ Windows 커서 테마를 macOS에서 사용할 수 있게 변환하고 편집·�
 
 ## 다운로드와 설치
 
-1. [GitHub Releases](https://github.com/Luminon/macoscursor/releases/latest)에서 최신 `Momiji-<version>-macOS-Universal.dmg`를 받습니다.
+1. [GitHub Releases](https://github.com/Luminon/macoscursor/releases)에서 최신 `Momiji-<version>-macOS-Universal.dmg`를 받습니다.
 2. DMG를 열고 `Momiji.app`을 Applications 폴더로 드래그합니다.
 3. Applications에서 Momiji를 실행합니다.
 
