@@ -48,6 +48,9 @@
 "cursorEditor.speed" = "Playback Speed";
 "cursorEditor.timingApproximation" = "This animation exceeds 240 runtime frames. Its timing will be approximated when applied.";
 "settings.cursorAppearance" = "Cursor Appearance";
+"settings.application" = "Application";
+"settings.hideDockIcon" = "Hide Dock icon while running";
+"settings.hideDockIcon.help" = "While the Dock icon is hidden, use the Momiji menu bar icon to open or quit the app.";
 "settings.cursorScale" = "Global Cursor Size";
 "settings.cursorScale.help" = "Scales every cursor and hotspot by the same amount when applying, without modifying the source theme. The new size takes effect the next time you apply a theme.";
 "settings.resetCursorScale" = "Reset to 100%";
@@ -59,6 +62,8 @@
 "settings.privateAPIWarning" = "System-wide application uses runtime-detected private CoreGraphics interfaces and may stop working after a macOS update. Momiji will keep conversion and export available if this happens.";
 "settings.systemAvailable" = "System-wide cursor replacement is available.";
 "settings.systemUnavailable" = "Conversion still works, but system-wide application is unavailable.";
+"menu.openMomiji" = "Open Momiji";
+"menu.quitMomiji" = "Quit Momiji";
 "cursor.role.arrow" = "Arrow";
 "cursor.role.iBeam" = "Text";
 "cursor.role.pointingHand" = "Link";

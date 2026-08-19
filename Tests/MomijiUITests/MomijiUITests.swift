@@ -36,6 +36,7 @@ final class MomijiUITests: XCTestCase {
             "-AppleLanguages", "(ko)",
             "-AppleLocale", "ko_KR",
             "-ApplePersistenceIgnoreState", "YES",
+            "-MomijiHideDockIcon", "NO",
         ]
         app.launchEnvironment["MOMIJI_LIBRARY_ROOT"] = temporaryRoot.appendingPathComponent("Library").path
         app.launchEnvironment["MOMIJI_UI_TEST_FIXTURE"] = fixtureFolder.path
@@ -68,6 +69,7 @@ final class MomijiUITests: XCTestCase {
             "-AppleLanguages", "(ko)",
             "-AppleLocale", "ko_KR",
             "-ApplePersistenceIgnoreState", "YES",
+            "-MomijiHideDockIcon", "NO",
         ]
         app.launchEnvironment["MOMIJI_LIBRARY_ROOT"] = temporaryRoot.appendingPathComponent("Library").path
         app.launchEnvironment["MOMIJI_UI_TEST_FIXTURE"] = fixtureFolder.path
@@ -90,12 +92,45 @@ final class MomijiUITests: XCTestCase {
     }
 
     @MainActor
+    func testDockIconVisibilityCanBeChangedFromSettings() throws {
+        let app = XCUIApplication()
+        app.launchArguments += [
+            "-AppleLanguages", "(ko)",
+            "-AppleLocale", "ko_KR",
+            "-ApplePersistenceIgnoreState", "YES",
+            "-MomijiHideDockIcon", "NO",
+        ]
+        app.launchEnvironment["MOMIJI_LIBRARY_ROOT"] = temporaryRoot.appendingPathComponent("Library").path
+        app.launchEnvironment["MOMIJI_UI_TEST_MOCK_SYSTEM"] = "1"
+        app.launch()
+        defer { app.terminate() }
+
+        let settings = app.buttons["settings-button"]
+        XCTAssertTrue(settings.waitForExistence(timeout: 5))
+        settings.click()
+
+        let toggle = app.switches["hide-dock-icon-toggle"]
+        XCTAssertTrue(toggle.waitForExistence(timeout: 5))
+        XCTAssertTrue(waitForToggle(toggle, value: false))
+
+        toggle.click()
+        XCTAssertTrue(waitForToggle(toggle, value: true))
+
+        // Switching to accessory mode can hand focus to another application.
+        // Bring Momiji back to the front before testing the restore path.
+        app.activate()
+        toggle.click()
+        XCTAssertTrue(waitForToggle(toggle, value: false))
+    }
+
+    @MainActor
     private func runWorkflow(language: String, locale: String, restoredText: String) throws {
         let app = XCUIApplication()
         app.launchArguments += [
             "-AppleLanguages", "(\(language))",
             "-AppleLocale", locale,
             "-ApplePersistenceIgnoreState", "YES",
+            "-MomijiHideDockIcon", "NO",
         ]
         app.launchEnvironment["MOMIJI_LIBRARY_ROOT"] = temporaryRoot.appendingPathComponent("Library").path
         app.launchEnvironment["MOMIJI_UI_TEST_FIXTURE"] = fixtureFolder.path
@@ -170,6 +205,12 @@ final class MomijiUITests: XCTestCase {
         XCTAssertGreaterThan(cursorList.frame.width, 220)
         XCTAssertLessThan(cursorList.frame.width, 320)
         XCTAssertGreaterThan(editor.frame.width, 360)
+    }
+
+    private func waitForToggle(_ toggle: XCUIElement, value: Bool) -> Bool {
+        let predicate = NSPredicate(format: "value == %d", value ? 1 : 0)
+        let expectation = XCTNSPredicateExpectation(predicate: predicate, object: toggle)
+        return XCTWaiter.wait(for: [expectation], timeout: 3) == .completed
     }
 }
 

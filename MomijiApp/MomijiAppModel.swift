@@ -17,6 +17,7 @@ final class MomijiAppModel {
     var statusMessage: String?
     var loginItemStatus: MomijiLoginItemStatus = .notRegistered
     var cursorScale: Double = CursorScale.default
+    var isDockIconHidden: Bool = false
 
     @ObservationIgnored private let importer = WindowsThemeImporter()
     @ObservationIgnored private let engine: any SystemCursorApplying
@@ -25,6 +26,7 @@ final class MomijiAppModel {
     @ObservationIgnored private var applicationCoordinator: CursorApplicationCoordinator?
 
     init() {
+        isDockIconHidden = UserDefaults.standard.bool(forKey: PreferenceKey.hideDockIcon)
         if ProcessInfo.processInfo.environment["MOMIJI_UI_TEST_MOCK_SYSTEM"] == "1" {
             engine = UITestSystemCursorEngine()
         } else {
@@ -252,11 +254,36 @@ final class MomijiAppModel {
         loginItem.openSystemSettings()
     }
 
+    func setDockIconHidden(_ hidden: Bool) {
+        isDockIconHidden = hidden
+        UserDefaults.standard.set(hidden, forKey: PreferenceKey.hideDockIcon)
+
+        // Let SwiftUI insert the menu bar item before the Dock icon disappears,
+        // so there is always a visible path back to the app window.
+        Task { @MainActor [weak self] in
+            await Task.yield()
+            self?.applyDockIconPreference()
+        }
+    }
+
+    func applyDockIconPreference() {
+        let policy: NSApplication.ActivationPolicy = isDockIconHidden ? .accessory : .regular
+        guard NSApplication.shared.activationPolicy() != policy else { return }
+        NSApplication.shared.setActivationPolicy(policy)
+        if policy == .regular {
+            NSApplication.shared.activate()
+        }
+    }
+
     private func applyTheme(_ theme: CursorTheme) throws {
         guard let applicationCoordinator else { return }
         try applicationCoordinator.apply(theme, cursorScale: cursorScale)
         MomijiNotifications.postActiveThemeChanged()
     }
+}
+
+private enum PreferenceKey {
+    static let hideDockIcon = "MomijiHideDockIcon"
 }
 
 private final class UITestSystemCursorEngine: SystemCursorApplying, @unchecked Sendable {

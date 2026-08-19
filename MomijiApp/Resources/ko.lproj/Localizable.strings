@@ -48,6 +48,9 @@
 "cursorEditor.speed" = "재생 속도";
 "cursorEditor.timingApproximation" = "이 애니메이션은 런타임 240프레임을 초과하여 실제 적용 시 재생 시간이 근사됩니다.";
 "settings.cursorAppearance" = "커서 모양";
+"settings.application" = "앱";
+"settings.hideDockIcon" = "실행 중 Dock 아이콘 숨기기";
+"settings.hideDockIcon.help" = "Dock 아이콘을 숨기는 동안 메뉴 막대의 Momiji 아이콘에서 앱을 열거나 종료할 수 있습니다.";
 "settings.cursorScale" = "전체 커서 크기";
 "settings.cursorScale.help" = "원본 테마는 변경하지 않고 시스템에 적용할 때 모든 커서와 핫스폿을 같은 비율로 조절합니다. 변경한 크기는 다음에 테마를 적용할 때 반영됩니다.";
 "settings.resetCursorScale" = "100%로 재설정";
@@ -59,6 +62,8 @@
 "settings.privateAPIWarning" = "시스템 전체 적용은 런타임에 탐지하는 비공개 CoreGraphics 인터페이스를 사용하므로 macOS 업데이트 후 작동하지 않을 수 있습니다. 이 경우에도 변환과 내보내기는 계속 사용할 수 있습니다.";
 "settings.systemAvailable" = "시스템 전체 커서 적용을 사용할 수 있습니다.";
 "settings.systemUnavailable" = "변환은 가능하지만 시스템 전체 적용은 사용할 수 없습니다.";
+"menu.openMomiji" = "Momiji 열기";
+"menu.quitMomiji" = "Momiji 종료";
 "cursor.role.arrow" = "화살표";
 "cursor.role.iBeam" = "텍스트";
 "cursor.role.pointingHand" = "링크";

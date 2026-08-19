@@ -9,6 +9,17 @@ struct MomijiSettingsView: View {
     var body: some View {
         VStack(spacing: 0) {
             Form {
+                Section("settings.application") {
+                    Toggle("settings.hideDockIcon", isOn: Binding(
+                        get: { model.isDockIconHidden },
+                        set: { model.setDockIconHidden($0) }
+                    ))
+                    .accessibilityIdentifier("hide-dock-icon-toggle")
+                    Text("settings.hideDockIcon.help")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
                 Section("settings.cursorAppearance") {
                     LabeledContent("settings.cursorScale") {
                         HStack(spacing: 12) {
