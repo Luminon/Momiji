@@ -56,9 +56,31 @@ struct MomijiSettingsView: View {
                         get: { model.loginItemStatus == .enabled || model.loginItemStatus == .requiresApproval },
                         set: { model.setLoginItemEnabled($0) }
                     ))
+                    .accessibilityIdentifier("login-item-toggle")
                     Text("settings.loginItem.help")
                         .font(.caption).foregroundStyle(.secondary)
-                    if model.loginItemStatus == .requiresApproval {
+
+                    if !model.canConfigureLoginItem {
+                        Label("settings.loginItem.requiresApplicationsFolder", systemImage: "folder.badge.questionmark")
+                            .foregroundStyle(.orange)
+                    }
+
+                    switch model.loginItemStatus {
+                    case .enabled:
+                        Label("settings.loginItem.enabled", systemImage: "checkmark.circle.fill")
+                            .foregroundStyle(.green)
+                    case .requiresApproval:
+                        Label("settings.loginItem.requiresApproval", systemImage: "exclamationmark.triangle.fill")
+                            .foregroundStyle(.orange)
+                    case .notRegistered:
+                        Label("settings.loginItem.disabled", systemImage: "circle")
+                            .foregroundStyle(.secondary)
+                    case .notFound:
+                        Label("settings.loginItem.notFound", systemImage: "xmark.circle.fill")
+                            .foregroundStyle(.red)
+                    }
+
+                    if model.loginItemStatus == .enabled || model.loginItemStatus == .requiresApproval {
                         Button("settings.openLoginItems") { model.openLoginItemSettings() }
                     }
                 }

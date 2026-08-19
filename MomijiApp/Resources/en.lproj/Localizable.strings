@@ -28,6 +28,9 @@
 "status.applied" = "Theme applied.";
 "status.restored" = "System cursors restored.";
 "status.exported" = "Theme exported.";
+"status.loginItemEnabled" = "Momiji will now open at login.";
+"status.loginItemDisabled" = "Open at login was disabled.";
+"error.loginItemRequiresApplicationsFolder" = "Move Momiji to the Applications folder and reopen it before enabling Open at Login.";
 "importReview.title" = "Review Import";
 "importReview.description" = "Check automatic role mappings before adding this theme to your library.";
 "importReview.status" = "";
@@ -55,8 +58,13 @@
 "settings.cursorScale.help" = "Scales every cursor and hotspot by the same amount when applying, without modifying the source theme. The new size takes effect the next time you apply a theme.";
 "settings.resetCursorScale" = "Reset to 100%";
 "settings.persistence" = "Persistence";
-"settings.loginItem" = "Keep the active theme after login and wake";
-"settings.loginItem.help" = "MomijiHelper runs only for your user account and reapplies the selected theme. It does not require administrator access.";
+"settings.loginItem" = "Open Momiji at computer login";
+"settings.loginItem.help" = "Momiji starts at login and immediately reapplies the active theme. It also reapplies after wake and user-session activation. Once registered, Momiji appears in the Open at Login list in System Settings.";
+"settings.loginItem.enabled" = "Registered in Open at Login";
+"settings.loginItem.disabled" = "Open at Login is off";
+"settings.loginItem.requiresApproval" = "Allow Momiji in System Settings to finish registration.";
+"settings.loginItem.notFound" = "macOS could not find the Momiji login item.";
+"settings.loginItem.requiresApplicationsFolder" = "Install Momiji in the Applications folder instead of running it directly from the DMG.";
 "settings.openLoginItems" = "Open Login Items Settings";
 "settings.compatibility" = "System Compatibility";
 "settings.privateAPIWarning" = "System-wide application uses runtime-detected private CoreGraphics interfaces and may stop working after a macOS update. Momiji will keep conversion and export available if this happens.";

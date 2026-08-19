@@ -223,6 +223,41 @@ struct StoreAndMappingTests {
         #expect(try store.activeThemeID() == nil)
         #expect(engine.restoreCount == 1)
     }
+
+    @Test("Launching Momiji reapplies the persisted active theme and scale")
+    func reappliesPersistedTheme() throws {
+        let root = FileManager.default.temporaryDirectory
+            .appendingPathComponent("MomijiReapplyTests-\(UUID().uuidString)", isDirectory: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let store = MomijiThemeStore(rootURL: root)
+        let parsed = try ANIParser().parseCUR(data: makeCUR(red: 30, green: 60, blue: 90))
+        let theme = CursorTheme(name: "Persistent", cursors: [parsed.asset(role: .arrow)])
+        _ = try store.save(theme)
+        try store.setActiveTheme(id: theme.id, cursorScale: 1.75)
+
+        let engine = RecordingCursorEngine()
+        let reapplied = try CursorApplicationCoordinator(store: store, engine: engine).reapplyActiveTheme()
+
+        #expect(reapplied)
+        #expect(engine.appliedThemeIDs == [theme.id])
+        #expect(engine.appliedWidths == [1.75])
+        #expect(try store.activeThemeID() == theme.id)
+        #expect(try store.activeCursorScale() == 1.75)
+    }
+
+    @Test("Launching Momiji does nothing when no theme is active")
+    func skipsReapplyWithoutActiveTheme() throws {
+        let root = FileManager.default.temporaryDirectory
+            .appendingPathComponent("MomijiNoReapplyTests-\(UUID().uuidString)", isDirectory: true)
+        defer { try? FileManager.default.removeItem(at: root) }
+        let store = MomijiThemeStore(rootURL: root)
+        let engine = RecordingCursorEngine()
+
+        let reapplied = try CursorApplicationCoordinator(store: store, engine: engine).reapplyActiveTheme()
+
+        #expect(!reapplied)
+        #expect(engine.appliedThemeIDs.isEmpty)
+    }
 }
 
 private final class RecordingCursorEngine: SystemCursorApplying, @unchecked Sendable {

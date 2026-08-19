@@ -111,6 +111,7 @@ final class MomijiUITests: XCTestCase {
 
         let toggle = app.switches["hide-dock-icon-toggle"]
         XCTAssertTrue(toggle.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.switches["login-item-toggle"].exists)
         XCTAssertTrue(waitForToggle(toggle, value: false))
 
         toggle.click()

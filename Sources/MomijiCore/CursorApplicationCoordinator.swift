@@ -41,6 +41,18 @@ public final class CursorApplicationCoordinator: @unchecked Sendable {
         }
     }
 
+    /// Reapplies the persisted active theme without changing the stored state.
+    /// This is used after login, app launch, wake, and user-session activation.
+    @discardableResult
+    public func reapplyActiveTheme() throws -> Bool {
+        try lock.withLock {
+            guard let theme = try previousTheme() else { return false }
+            let cursorScale = try store.activeCursorScale()
+            try engine.apply(theme.scaled(by: cursorScale))
+            return true
+        }
+    }
+
     private func previousTheme() throws -> CursorTheme? {
         guard let id = try store.activeThemeID() else { return nil }
         return try store.loadTheme(id: id)

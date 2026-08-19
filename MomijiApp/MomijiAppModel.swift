@@ -26,7 +26,7 @@ final class MomijiAppModel {
     @ObservationIgnored private var applicationCoordinator: CursorApplicationCoordinator?
 
     init() {
-        isDockIconHidden = UserDefaults.standard.bool(forKey: PreferenceKey.hideDockIcon)
+        isDockIconHidden = UserDefaults.standard.bool(forKey: MomijiPreferenceKey.hideDockIcon)
         if ProcessInfo.processInfo.environment["MOMIJI_UI_TEST_MOCK_SYSTEM"] == "1" {
             engine = UITestSystemCursorEngine()
         } else {
@@ -53,6 +53,7 @@ final class MomijiAppModel {
     }
 
     var systemAvailability: SystemCursorAvailability { engine.availability }
+    var canConfigureLoginItem: Bool { loginItem.isInstalledInApplications }
 
     var selectedTheme: CursorTheme? {
         guard let selectedThemeID else { return nil }
@@ -227,9 +228,17 @@ final class MomijiAppModel {
     }
 
     func setLoginItemEnabled(_ enabled: Bool) {
+        guard !enabled || loginItem.isInstalledInApplications else {
+            errorMessage = String(localized: "error.loginItemRequiresApplicationsFolder")
+            return
+        }
         do {
             try loginItem.setEnabled(enabled)
             loginItemStatus = loginItem.status
+            if enabled, loginItemStatus == .requiresApproval {
+                loginItem.openSystemSettings()
+            }
+            statusMessage = String(localized: enabled ? "status.loginItemEnabled" : "status.loginItemDisabled")
         } catch {
             errorMessage = error.localizedDescription
             loginItemStatus = loginItem.status
@@ -256,7 +265,7 @@ final class MomijiAppModel {
 
     func setDockIconHidden(_ hidden: Bool) {
         isDockIconHidden = hidden
-        UserDefaults.standard.set(hidden, forKey: PreferenceKey.hideDockIcon)
+        UserDefaults.standard.set(hidden, forKey: MomijiPreferenceKey.hideDockIcon)
 
         // Let SwiftUI insert the menu bar item before the Dock icon disappears,
         // so there is always a visible path back to the app window.
@@ -282,7 +291,7 @@ final class MomijiAppModel {
     }
 }
 
-private enum PreferenceKey {
+enum MomijiPreferenceKey {
     static let hideDockIcon = "MomijiHideDockIcon"
 }
 
