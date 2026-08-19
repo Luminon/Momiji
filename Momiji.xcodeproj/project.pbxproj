@@ -1,0 +1,246 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* MomijiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000001 /* MomijiApp.swift */; };
+		B00000000000000000000002 /* MomijiAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000002 /* MomijiAppModel.swift */; };
+		B00000000000000000000003 /* MomijiContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000003 /* MomijiContentView.swift */; };
+		B00000000000000000000004 /* ImportReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000004 /* ImportReviewView.swift */; };
+		B00000000000000000000005 /* ThemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005 /* ThemeDetailView.swift */; };
+		B00000000000000000000006 /* MomijiSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000006 /* MomijiSettingsView.swift */; };
+		B00000000000000000000007 /* MomijiHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000007 /* MomijiHelperApp.swift */; };
+		B00000000000000000000008 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000012 /* Localizable.strings */; };
+		B00000000000000000000009 /* MomijiCore in Frameworks */ = {isa = PBXBuildFile; productRef = K00000000000000000000001 /* MomijiCore */; };
+		B00000000000000000000010 /* MomijiSystem in Frameworks */ = {isa = PBXBuildFile; productRef = K00000000000000000000002 /* MomijiSystem */; };
+		B00000000000000000000011 /* MomijiCore in Frameworks */ = {isa = PBXBuildFile; productRef = K00000000000000000000003 /* MomijiCore */; };
+		B00000000000000000000012 /* MomijiSystem in Frameworks */ = {isa = PBXBuildFile; productRef = K00000000000000000000004 /* MomijiSystem */; };
+		B00000000000000000000013 /* MomijiHelper.app in Embed Login Items */ = {isa = PBXBuildFile; fileRef = A00000000000000000000014 /* MomijiHelper.app */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B00000000000000000000014 /* MomijiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000018 /* MomijiUITests.swift */; };
+		B00000000000000000000015 /* Momiji.icon in Resources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000020 /* Momiji.icon */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D00000000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = T00000000000000000000002;
+			remoteInfo = MomijiHelper;
+		};
+		D00000000000000000000004 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = T00000000000000000000001;
+			remoteInfo = Momiji;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F00000000000000000000004 /* Embed Login Items */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (B00000000000000000000013 /* MomijiHelper.app in Embed Login Items */, );
+			name = "Embed Login Items";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A00000000000000000000001 /* MomijiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomijiApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000002 /* MomijiAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomijiAppModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000003 /* MomijiContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomijiContentView.swift; sourceTree = "<group>"; };
+		A00000000000000000000004 /* ImportReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportReviewView.swift; sourceTree = "<group>"; };
+		A00000000000000000000005 /* ThemeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeDetailView.swift; sourceTree = "<group>"; };
+		A00000000000000000000006 /* MomijiSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomijiSettingsView.swift; sourceTree = "<group>"; };
+		A00000000000000000000007 /* MomijiHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomijiHelperApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00000000000000000000009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00000000000000000000010 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A00000000000000000000011 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A00000000000000000000013 /* Momiji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momiji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000014 /* MomijiHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MomijiHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000015 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
+		A00000000000000000000016 /* App.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = App.xcconfig; sourceTree = "<group>"; };
+		A00000000000000000000017 /* Helper.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Helper.xcconfig; sourceTree = "<group>"; };
+		A00000000000000000000018 /* MomijiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomijiUITests.swift; sourceTree = "<group>"; };
+		A00000000000000000000019 /* MomijiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomijiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000020 /* Momiji.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Momiji.icon; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F00000000000000000000002 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000009, B00000000000000000000010, ); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000006 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000011, B00000000000000000000012, ); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000009 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G00000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000020 /* Momiji.icon */,
+				G00000000000000000000002 /* MomijiApp */,
+				G00000000000000000000003 /* MomijiHelper */,
+				G00000000000000000000005 /* Config */,
+				G00000000000000000000007 /* MomijiUITests */,
+				G00000000000000000000006 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G00000000000000000000002 /* MomijiApp */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000001, A00000000000000000000002, A00000000000000000000003,
+				A00000000000000000000004, A00000000000000000000005, A00000000000000000000006,
+				G00000000000000000000004 /* Resources */, A00000000000000000000008 /* Info.plist */,
+			);
+			path = MomijiApp;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000003 /* MomijiHelper */ = {
+			isa = PBXGroup;
+			children = (A00000000000000000000007, A00000000000000000000009, );
+			path = MomijiHelper;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000004 /* Resources */ = {
+			isa = PBXGroup;
+			children = (A00000000000000000000012 /* Localizable.strings */, );
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000005 /* Config */ = {
+			isa = PBXGroup;
+			children = (A00000000000000000000015, A00000000000000000000016, A00000000000000000000017, );
+			path = Config;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000006 /* Products */ = {
+			isa = PBXGroup;
+			children = (A00000000000000000000013, A00000000000000000000014, A00000000000000000000019, );
+			name = Products;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000007 /* MomijiUITests */ = {
+			isa = PBXGroup;
+			children = (A00000000000000000000018, );
+			path = Tests/MomijiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T00000000000000000000001 /* Momiji */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = L00000000000000000000002;
+			buildPhases = (F00000000000000000000001, F00000000000000000000002, F00000000000000000000003, F00000000000000000000004, );
+			buildRules = ();
+			dependencies = (D00000000000000000000001, );
+			name = Momiji;
+			packageProductDependencies = (K00000000000000000000001, K00000000000000000000002, );
+			productName = Momiji;
+			productReference = A00000000000000000000013;
+			productType = "com.apple.product-type.application";
+		};
+		T00000000000000000000002 /* MomijiHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = L00000000000000000000003;
+			buildPhases = (F00000000000000000000005, F00000000000000000000006, F00000000000000000000007, );
+			buildRules = ();
+			dependencies = ();
+			name = MomijiHelper;
+			packageProductDependencies = (K00000000000000000000003, K00000000000000000000004, );
+			productName = MomijiHelper;
+			productReference = A00000000000000000000014;
+			productType = "com.apple.product-type.application";
+		};
+		T00000000000000000000003 /* MomijiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = L00000000000000000000004;
+			buildPhases = (F00000000000000000000008, F00000000000000000000009, F00000000000000000000010, );
+			buildRules = ();
+			dependencies = (D00000000000000000000003, );
+			name = MomijiUITests;
+			packageProductDependencies = ();
+			productName = MomijiUITests;
+			productReference = A00000000000000000000019;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2660; LastUpgradeCheck = 2660; TargetAttributes = {T00000000000000000000001 = {CreatedOnToolsVersion = 26.0; }; T00000000000000000000002 = {CreatedOnToolsVersion = 26.0; }; T00000000000000000000003 = {CreatedOnToolsVersion = 26.0; TestTargetID = T00000000000000000000001; }; }; };
+			buildConfigurationList = L00000000000000000000001;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, ko, Base, );
+			mainGroup = G00000000000000000000001;
+			packageReferences = (K00000000000000000000000, );
+			productRefGroup = G00000000000000000000006;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (T00000000000000000000001, T00000000000000000000002, T00000000000000000000003, );
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F00000000000000000000003 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000008, B00000000000000000000015 /* Momiji.icon in Resources */, ); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000007 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000010 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F00000000000000000000001 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000001, B00000000000000000000002, B00000000000000000000003, B00000000000000000000004, B00000000000000000000005, B00000000000000000000006, ); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000005 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000007, ); runOnlyForDeploymentPostprocessing = 0; };
+		F00000000000000000000008 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000014, ); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D00000000000000000000001 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = T00000000000000000000002 /* MomijiHelper */; targetProxy = D00000000000000000000002 /* PBXContainerItemProxy */; };
+		D00000000000000000000003 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = T00000000000000000000001 /* Momiji */; targetProxy = D00000000000000000000004 /* PBXContainerItemProxy */; };
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A00000000000000000000012 /* Localizable.strings */ = {isa = PBXVariantGroup; children = (A00000000000000000000010 /* en */, A00000000000000000000011 /* ko */, ); name = Localizable.strings; sourceTree = "<group>"; };
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C00000000000000000000001 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_C_LANGUAGE_STANDARD = gnu17; GCC_OPTIMIZATION_LEVEL = 0; MACOSX_DEPLOYMENT_TARGET = 15.0; ONLY_ACTIVE_ARCH = YES; SDKROOT = macosx; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_STRICT_CONCURRENCY = complete; }; name = Debug; };
+		C00000000000000000000002 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; GCC_C_LANGUAGE_STANDARD = gnu17; MACOSX_DEPLOYMENT_TARGET = 15.0; SDKROOT = macosx; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_OPTIMIZATION_LEVEL = "-O"; SWIFT_STRICT_CONCURRENCY = complete; }; name = Release; };
+		C00000000000000000000003 /* Debug */ = {isa = XCBuildConfiguration; baseConfigurationReference = A00000000000000000000016 /* App.xcconfig */; buildSettings = {ARCHS = "$(ARCHS_STANDARD)"; CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = NO; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = MomijiApp/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; MARKETING_VERSION = 1.0.0; PRODUCT_NAME = Momiji; REGISTER_APP_GROUPS = NO; SWIFT_EMIT_LOC_STRINGS = NO; SWIFT_VERSION = 6.0; }; name = Debug; };
+		C00000000000000000000004 /* Release */ = {isa = XCBuildConfiguration; baseConfigurationReference = A00000000000000000000016 /* App.xcconfig */; buildSettings = {ARCHS = "$(ARCHS_STANDARD)"; CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = NO; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = MomijiApp/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; MARKETING_VERSION = 1.0.0; PRODUCT_NAME = Momiji; REGISTER_APP_GROUPS = NO; SWIFT_EMIT_LOC_STRINGS = NO; SWIFT_VERSION = 6.0; }; name = Release; };
+		C00000000000000000000005 /* Debug */ = {isa = XCBuildConfiguration; baseConfigurationReference = A00000000000000000000017 /* Helper.xcconfig */; buildSettings = {ARCHS = "$(ARCHS_STANDARD)"; CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = NO; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = MomijiHelper/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; MARKETING_VERSION = 1.0.0; PRODUCT_NAME = MomijiHelper; SKIP_INSTALL = YES; SWIFT_VERSION = 6.0; }; name = Debug; };
+		C00000000000000000000006 /* Release */ = {isa = XCBuildConfiguration; baseConfigurationReference = A00000000000000000000017 /* Helper.xcconfig */; buildSettings = {ARCHS = "$(ARCHS_STANDARD)"; CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO; CURRENT_PROJECT_VERSION = 1; ENABLE_APP_SANDBOX = NO; ENABLE_HARDENED_RUNTIME = YES; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = MomijiHelper/Info.plist; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks"; MARKETING_VERSION = 1.0.0; PRODUCT_NAME = MomijiHelper; SKIP_INSTALL = YES; SWIFT_VERSION = 6.0; }; name = Release; };
+		C00000000000000000000007 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; MACOSX_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = app.momiji.MomijiUITests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 6.0; TEST_TARGET_NAME = Momiji; }; name = Debug; };
+		C00000000000000000000008 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; MACOSX_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = app.momiji.MomijiUITests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 6.0; TEST_TARGET_NAME = Momiji; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		L00000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000001, C00000000000000000000002, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		L00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000003, C00000000000000000000004, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		L00000000000000000000003 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000005, C00000000000000000000006, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		L00000000000000000000004 = {isa = XCConfigurationList; buildConfigurations = (C00000000000000000000007, C00000000000000000000008, ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		K00000000000000000000000 /* XCLocalSwiftPackageReference "." */ = {isa = XCLocalSwiftPackageReference; relativePath = .; };
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		K00000000000000000000001 /* MomijiCore */ = {isa = XCSwiftPackageProductDependency; productName = MomijiCore; };
+		K00000000000000000000002 /* MomijiSystem */ = {isa = XCSwiftPackageProductDependency; productName = MomijiSystem; };
+		K00000000000000000000003 /* MomijiCore */ = {isa = XCSwiftPackageProductDependency; productName = MomijiCore; };
+		K00000000000000000000004 /* MomijiSystem */ = {isa = XCSwiftPackageProductDependency; productName = MomijiSystem; };
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = P00000000000000000000001 /* Project object */;
+}

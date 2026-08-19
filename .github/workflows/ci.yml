@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.4.app
+      - name: Core tests
+        run: swift test
+      - name: Universal release build
+        run: >-
+          xcodebuild
+          -project Momiji.xcodeproj
+          -scheme Momiji
+          -configuration Release
+          -destination 'generic/platform=macOS'
+          -derivedDataPath "$RUNNER_TEMP/MomijiDerivedData"
+          ARCHS='arm64 x86_64'
+          ONLY_ACTIVE_ARCH=NO
+          CODE_SIGNING_ALLOWED=NO
+          build
+      - name: Verify architectures
+        run: |
+          APP="$RUNNER_TEMP/MomijiDerivedData/Build/Products/Release/Momiji.app"
+          lipo -archs "$APP/Contents/MacOS/Momiji"
+          lipo -archs "$APP/Contents/Library/LoginItems/MomijiHelper.app/Contents/MacOS/MomijiHelper"

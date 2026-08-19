@@ -1,0 +1,3 @@
+#include "Signing.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = $(MOMIJI_BUNDLE_PREFIX).Momiji.Helper
