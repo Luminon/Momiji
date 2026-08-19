@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_16.4.app
+        run: sudo xcode-select -s /Applications/Xcode_26.3.app
       - name: Core tests
         run: swift test
       - name: Universal release build
@@ -30,3 +30,6 @@ jobs:
           APP="$RUNNER_TEMP/MomijiDerivedData/Build/Products/Release/Momiji.app"
           lipo -archs "$APP/Contents/MacOS/Momiji"
           lipo -archs "$APP/Contents/Library/LoginItems/MomijiHelper.app/Contents/MacOS/MomijiHelper"
+          test -f "$APP/Contents/Resources/Momiji.icns"
+          test -f "$APP/Contents/Resources/Assets.car"
+          test "$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIconName' "$APP/Contents/Info.plist")" = Momiji

@@ -77,7 +77,7 @@ Windows 커서 테마를 macOS에서 사용할 수 있게 변환하고 편집·�
 
 ## 개발
 
-Xcode 16 이상과 macOS 15 SDK가 필요합니다. Xcode에서 `Momiji.xcodeproj`를 열거나 다음 명령으로 앱과 테스트 번들을 빌드합니다.
+Icon Composer 앱 아이콘을 컴파일할 수 있는 Xcode 26 이상이 필요합니다. 앱의 배포 대상은 macOS 15.0입니다. Xcode에서 `Momiji.xcodeproj`를 열거나 다음 명령으로 앱과 테스트 번들을 빌드합니다.
 
 ```sh
 ./scripts/test.sh
